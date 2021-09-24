@@ -11,7 +11,7 @@
 		  
 		  <el-table-column
 		    prop="parent.name"
-		    label="上级分类">
+		    label="上级分类123">
 		  </el-table-column>
 		  
 	      <el-table-column

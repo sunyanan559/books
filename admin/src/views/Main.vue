@@ -17,7 +17,7 @@
             <template slot="title"><i class="el-icon-menu"></i>内容管理</template>
             <el-menu-item-group>
               <template slot="title">学生管理</template>
-              <el-menu-item index="/categories/create">新建分类</el-menu-item>
+              <el-menu-item index="/categories/create">新建分类123</el-menu-item>
               <el-menu-item index="/categories/list">分类列表</el-menu-item>
 			   <el-menu-item index="/categories/listTree">分类列表树</el-menu-item>
 			</el-menu-item-group>

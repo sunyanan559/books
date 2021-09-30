@@ -14,49 +14,41 @@
 		unique-opened
 		:default-active="$route.path">
           <el-submenu index="1">
-            <template slot="title"><i class="el-icon-menu"></i>内容管理</template>
+            <template slot="title"><i class="el-icon-menu"></i>信息管理</template>
             <el-menu-item-group>
               <template slot="title">学生管理</template>
-              <el-menu-item index="/categories/create">新建分类123</el-menu-item>
-              <el-menu-item index="/categories/list">分类列表</el-menu-item>
-			   <el-menu-item index="/categories/listTree">分类列表树</el-menu-item>
+              <el-menu-item index="/categories/create">录入学生信息</el-menu-item>
+              <el-menu-item index="/categories/list">学生信息列表</el-menu-item>
 			</el-menu-item-group>
 			
 			 <el-menu-item-group>
-			<template slot="title">品牌管理</template>
-			  <el-menu-item index="/brands/create">新建品牌</el-menu-item>
-			  <el-menu-item index="/brands/list">品牌分类</el-menu-item>
+			<template slot="title">图书管理</template>
+			  <el-menu-item index="/brands/create">录入图书详细</el-menu-item>
+			  <el-menu-item index="/brands/list">图书信息列表</el-menu-item>
 			</el-menu-item-group>
-			
-		   <el-menu-item-group>
-			<template slot="title">商品管理</template>
-			  <el-menu-item index="/items/create">新建商品</el-menu-item>
-			  <el-menu-item index="/items/list">商品列表</el-menu-item>	
-			</el-menu-item-group>
-			
-			 <el-menu-item-group>
-			<template slot="title">广告管理</template>
-			  <el-menu-item index="/ads/create">新建广告</el-menu-item>
-			  <el-menu-item index="/ads/list">广告列表</el-menu-item>	
-			</el-menu-item-group>
+
           </el-submenu>
 			<el-submenu index="2">
-		    <template slot="title"><i class="el-icon-goods"></i>运营管理</template>
-		    <el-menu-item-group>
-		      <template slot="title">广告管理</template>
-		      <el-menu-item index="/categories/create">新建广告</el-menu-item>
-		      <el-menu-item index="/categories/list">广告列表</el-menu-item>
-		  			</el-menu-item-group>
-			   </el-submenu>
+		    	<template slot="title"><i class="el-icon-goods"></i>图书管理</template>
+		    	<el-menu-item-group>
+				<template slot="title">借阅管理</template>
+			  	<el-menu-item index="/items/create">新建借阅图书</el-menu-item>
+			  	<el-menu-item index="/items/list">图书借阅列表</el-menu-item>	
+				</el-menu-item-group>
+				<el-menu-item-group>
+				<template slot="title">归还管理</template>
+			  	<el-menu-item index="/item2s/list">图书归还状态表</el-menu-item>	
+				</el-menu-item-group>
+			</el-submenu>
 			  
 			<el-submenu index="3">
 			  <template slot="title"><i class="el-icon-setting"></i>系统设置</template>
-			  <el-menu-item-group>
+			  	<el-menu-item-group>
 			    <template slot="title">管理员</template>
 			    <el-menu-item index="/adminUser/create">新建管理员</el-menu-item>
 			    <el-menu-item index="/adminUser/list">管理员列表</el-menu-item>
-						</el-menu-item-group>
-						   </el-submenu>
+				</el-menu-item-group>
+			</el-submenu>
         </el-menu>
       </el-aside>
       

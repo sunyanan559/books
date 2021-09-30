@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>商品列表</h1>
+    <h1>图书借阅列表</h1>
 	<el-table :data="items">
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column
@@ -8,21 +8,21 @@
 	        label="ID"
 	        width="240">
 	      </el-table-column>
-		  </el-table-column>
-	      <el-table-column
-	        prop="name"
-	        label="商品名称"
-	        width="240">
-	      </el-table-column>
-		  <!-- 图标 -->
 		  <el-table-column
-		    prop="icon"
-		    label="图标"
-				>
-			<template slot-scope="scope">
-				<img :src="scope.row.icon" style="height: 3rem;"/>
-			</template>
-		  </el-table-column>
+	        prop="name"
+	        label="图书名称"
+	        width="220">
+	      </el-table-column>
+		  <el-table-column
+	        prop="time1"
+	        label="借阅时间"
+	        width="200">
+	      </el-table-column>
+		  <el-table-column
+	        prop="time2"
+	        label="归还时间"
+	        width="200">
+	      </el-table-column>
 		  <!-- 操作 -->
 		  <el-table-column label="操作">
 		  	<template slot-scope="scope">

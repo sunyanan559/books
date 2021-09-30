@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>广告列表</h1>
+    <h1>图书归还列表</h1>
 	<el-table :data="items">
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column
@@ -8,24 +8,19 @@
 	        label="ID"
 	        width="240">
 	      </el-table-column>
-		  </el-table-column>
-	      <el-table-column
+		  <el-table-column
 	        prop="name"
-	        label="广告名称"
-	        width="240">
+	        label="图书名称"
+	        width="220">
 	      </el-table-column>
-		  <!-- 图标 -->
-		  
-		  <!-- 操作 -->
-		  <el-table-column label="操作">
-		  	<template slot-scope="scope">
-		  	<el-button 
-				size="mini" 
-		  		@click="$router.push(`/ads/edit/${scope.row._id}`)">编辑</el-button>
-		  	<el-button 
-				size="mini" type="danger" 
-		  		@click="remove(scope.row)">删除</el-button>
-		  	</template>
+		  <el-table-column
+	        prop="time1"
+	        label="借阅时间"
+	        width="200">
+	      </el-table-column>
+		  <el-table-column label="归还状态">
+		  	<el-button type="info" size="mini">未归还</el-button>
+            <el-button type="success" size="mini">已归还</el-button>
 		  	</el-table-column>
 		  
 	    </el-table>
@@ -35,7 +30,7 @@
 <script>
 
 export default {
-  name: 'AdList',
+  name: 'brandsList',
   data(){
 	  return{
 		  items:[]
@@ -44,20 +39,20 @@ export default {
   methods:{
 	  //获取分类
 	async fetch(){
-		const res = await this.$http.get('rest/ads')
+		const res = await this.$http.get('rest/items')
 		this.items = res.data
 		console.log('items',this.items)
 	},
 	//删除操作
 	 async remove(row){
 		 console.log('row',row)
-		  this.$confirm(`是否删除广告${row.name}?`,'提示',{
+		  this.$confirm(`是否删除信息${row.name}?`,'提示',{
 		            confirmButtonText: '确定',
 		            cancelButtonText: '取消',
 		            type: 'warning'
 		          }).then(async () => {
 					  //删除接口
-					const res = await this.$http.delete(`rest/ads/${row._id}`)
+					const res = await this.$http.delete(`rest/items/${row._id}`)
 		            console.log('res',res)
 					//弹框
 					this.$message({

@@ -1,14 +1,17 @@
 <template>
   <div class="home">
-      <h1>{{id?'编辑':'新建'}}品牌</h1>
+      <h1>{{id?'编辑':'新建'}}图书信息</h1>
 	  <!--@submit.native.prevent 阻止默认提交，不要跳转页面，进行指定提交 -->
 	  <el-form :model="model" 
 	           label-width="120px" 
 			   @submit.native.prevent="save">
-	    <el-form-item label="品牌名称">
+	    <el-form-item label="图书名称">
 	      <el-input v-model="model.name"></el-input>
 	    </el-form-item>
-		<el-form-item label="品牌图标">
+		<el-form-item label="图书详情">
+	      <el-input v-model="model.details"></el-input>
+	    </el-form-item>
+		<el-form-item label="图书图标">
 			<el-upload
 			  class="avatar-uploader"
 			  :action="$http.defaults.baseURL+'/upload'"

@@ -8,7 +8,6 @@ Vue.use(VueRouter)
 const Main = ()=>import('../views/Main')
 const CategoryEdit = ()=>import('../views/category/CategoryEdit')
 const CategoryList = ()=>import('../views/category/CategoryList')
-const CategoryListTree = ()=>import('../views/category/CategoryListTree')
 
 const BrandEdit = ()=>import('../views/brand/BrandEdit')
 const BrandList = ()=>import('../views/brand/BrandList')
@@ -16,8 +15,7 @@ const BrandList = ()=>import('../views/brand/BrandList')
 const ItemEdit = ()=>import('../views/item/ItemEdit')
 const ItemList = ()=>import('../views/item/ItemList')
 
-const AdEdit = ()=>import('../views/ad/AdEdit')
-const AdList = ()=>import('../views/ad/AdList')
+const ItemList2 = ()=>import('../views/item2/ItemList2')
 
 const AdminUserEdit = ()=>import('../views/adminUser/AdminUserEdit')
 const AdminUserList = ()=>import('../views/adminUser/AdminUserList')
@@ -40,7 +38,6 @@ const routes = [
 		{path:'/categories/create',component:CategoryEdit},
 		{path:'/categories/edit/:id',component:CategoryEdit,props:true},
 		{path:'/categories/list',component:CategoryList},
-		{path:'/categories/listTree',component:CategoryListTree},
 	
 		{path:'/brands/create',component:BrandEdit},
 		{path:'/brands/edit/:id',component:BrandEdit,props:true},
@@ -49,10 +46,8 @@ const routes = [
 		{path:'/items/create',component:ItemEdit},
 		{path:'/items/edit/:id',component:ItemEdit,props:true},
 		{path:'/items/list',component:ItemList},
-		
-		{path:'/ads/create',component:AdEdit},
-		{path:'/ads/edit/:id',component:AdEdit,props:true},
-		{path:'/ads/list',component:AdList},
+
+		{path:'/item2s/list',component:ItemList2},
 		
 		{path:'/adminUser/create',component:AdminUserEdit},
 		{path:'/adminUser/edit/:id',component:AdminUserEdit,props:true},

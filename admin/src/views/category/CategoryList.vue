@@ -11,12 +11,12 @@
 		  
 		  <el-table-column
 		    prop="parent.name"
-		    label="上级分类123">
+		    label="班级">
 		  </el-table-column>
 		  
 	      <el-table-column
 	        prop="name"
-	        label="分类名称"
+	        label="姓名"
 	        width="240">
 	      </el-table-column>
 		  <!-- 操作 -->
@@ -54,7 +54,7 @@ export default {
 	//删除操作
 	 async remove(row){
 		 console.log('row',row)
-		  this.$confirm(`是否删除分类${row.name}?`,'提示',{
+		  this.$confirm(`是否删除数据${row.name}?`,'提示',{
 		            confirmButtonText: '确定',
 		            cancelButtonText: '取消',
 		            type: 'warning'

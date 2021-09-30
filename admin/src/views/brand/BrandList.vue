@@ -8,10 +8,14 @@
 	        label="ID"
 	        width="240">
 	      </el-table-column>
-		  </el-table-column>
 	      <el-table-column
 	        prop="name"
-	        label="分类名称"
+	        label="图书名称"
+	        width="240">
+	      </el-table-column>
+	      <el-table-column
+	        prop="details"
+	        label="图书详情"
 	        width="240">
 	      </el-table-column>
 		  <!-- 图标 -->

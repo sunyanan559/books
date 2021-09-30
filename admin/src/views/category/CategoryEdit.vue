@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <h1>{{id?'编辑':'新建'}}分类</h1>
+    <h1>{{id?'编辑':'新建'}}学生信息</h1>
 	<!-- @submit.native.prevent 阻止默认提交，不要跳转页面，进行指定提交 -->
 	<el-form  :model="model" 
 				label-width="120px" 
 				@submit.native.prevent="save">
-		<el-form-item label="上级分类">
+		<el-form-item label="班级">
 			<el-select v-model="model.parent">
 			  <el-option 
 						v-for="item in parents"
@@ -14,7 +14,7 @@
 						:value="item._id"></el-option>
 			</el-select>
 		  </el-form-item>
-	  <el-form-item label="分类名称">
+	  <el-form-item label="姓名">
 	    <el-input v-model="model.name"></el-input>
 	  </el-form-item>
 	  <el-form-item>

@@ -1,18 +1,13 @@
 <template>
 	<div class="create">
-		<h3>{{id?'编辑':'新建'}}商品</h3>
+		<h3>{{id?'编辑':'新建'}}借阅信息登记</h3>
 		<!-- @submit.native.prevent 阻止默认提交，不要跳转页面，进行指定提交 -->
 		<el-form  :model="model" label-width="120px" @submit.native.prevent="save">
-			<!-- 左侧显示的名称 label     model进行绑定 -->
-		  <el-form-item label="商品名称">
+		<el-form-item label="图书名称">
 			  <!-- v-model动态绑定 -->
 		    <el-input v-model="model.name"></el-input>
-		  </el-form-item>
-		  <el-form-item label="商品标题">
-		  			  <!-- v-model动态绑定 -->
-		    <el-input v-model="model.title"></el-input>
-		  </el-form-item>
-		  <el-form-item label="商品类型">
+		</el-form-item>
+		<el-form-item label="班级">
 		  	<el-select v-model="model.categories" multiple>
 		  	  <el-option 
 		  				v-for="item in categories"
@@ -21,38 +16,18 @@
 		  				:value="item._id"></el-option>
 		  	</el-select>
 		    </el-form-item>
-			<el-form-item label="商品品牌">
-				<el-select v-model="model.brands">
-				  <el-option 
-							v-for="item in brands"
-							:key="item._id"
-							:label="item.name" 
-							:value="item._id"></el-option>
-				</el-select>
-			  </el-form-item>
-			  <el-form-item label="商品价格">
+		<el-form-item label="学生姓名">
+			  <!-- v-model动态绑定 -->
+		    <el-input v-model="model.classname"></el-input>
+		</el-form-item>
+			  <el-form-item label="借阅时间">
 			  			  <!-- v-model动态绑定 -->
-			    <el-input v-model="model.price"></el-input>
+			    <el-input v-model="model.time1"></el-input>
 			  </el-form-item>
-		  <el-form-item label="品牌图标">
-			  <el-upload
-			    class="avatar-uploader"
-			    :action="$http.defaults.baseURL+'/upload'"
-			    :show-file-list="false"
-			    :on-success="afterUpload"
-			    >
-				<!-- v-if="model.icon" 有图片就显示图片 没有icon就显示图标-->
-			    <img v-if="model.icon" :src="model.icon" class="avatar">
-			    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-			  </el-upload>
-		  </el-form-item>
-		  <!--  富文本编辑框-->
-		  <el-form-item>
-			  <vue-editor v-model="model.body" 
-						useCustomImageHandler
-						@image-added="handleImageAdded"
-							/>
-		  </el-form-item>
+			<el-form-item label="归还时间">
+			  			  <!-- v-model动态绑定 -->
+			    <el-input v-model="model.time2"></el-input>
+			  </el-form-item>
 		  <el-form-item>
 			  <!-- native-type="submit" 采取原生态提交 -->
 		      <el-button type="primary" native-type="submit">保存</el-button>

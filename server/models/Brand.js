@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
 	name:{type:String},
+	details:{type:String},
 	icon:{type:String},
 	parent:{
 		type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称

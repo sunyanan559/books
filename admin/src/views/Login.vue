@@ -48,6 +48,10 @@ export default {
 	.login-container{
 		width: 25rem;
 		margin: 6rem auto;
+		text-align: center;
+	}
+	.el-form-item{
+		text-align: center;
 	}
 	
 </style>

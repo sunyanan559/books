@@ -1,27 +1,40 @@
 <template>
   <div class="home">
     <h1>图书借阅列表</h1>
+	<!-- <el-input v-model="search" placeholder="请输入姓名"  width="180"></el-input>
+	<el-button type="info" @click="btn">信息按钮</el-button> -->
 	<el-table :data="items">
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column
 	        prop="_id"
 	        label="ID"
-	        width="240">
+	        width="180">
 	      </el-table-column>
 		  <el-table-column
 	        prop="name"
 	        label="图书名称"
-	        width="220">
+	        width="180">
 	      </el-table-column>
+		  </el-table-column>
+		  <el-table-column
+		    prop="stuname"
+		    label="学生姓名"
+		    width="100">
+		  </el-table-column>
+		  <el-table-column
+		    prop="phone"
+		    label="联系电话"
+		    width="120">
+		  </el-table-column>
 		  <el-table-column
 	        prop="time1"
-	        label="借阅时间"
-	        width="200">
+	        label="借阅日期"
+	        width="150">
 	      </el-table-column>
 		  <el-table-column
 	        prop="time2"
-	        label="归还时间"
-	        width="200">
+	        label="归还日期"
+	        width="150">
 	      </el-table-column>
 		  <!-- 操作 -->
 		  <el-table-column label="操作">
@@ -45,7 +58,9 @@ export default {
   name: 'brandsList',
   data(){
 	  return{
-		  items:[]
+		  items:[],
+		  // search:'',
+		  // searchData:'',
 	  }
   },
   methods:{
@@ -79,11 +94,19 @@ export default {
 		              message: '已取消删除'
 		            });          
 		          });
-	  }
+	  } 
   },
+ 
   //页面刚刚初进入的时候需要做什么
   created() {
   	this.fetch();
   }
 }
 </script>
+
+<style scoped>
+.el-input{
+	width:50%;
+	margin-right: 20px;
+}
+</style>

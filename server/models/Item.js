@@ -3,14 +3,15 @@ const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
 	name:{type:String},
 	//唯一的写法就是{},进行多选数组显示多数据
-	categories:[
+	categories:
 		{
 			type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称
 			ref:'Category'						//关联的是本身,关联谁
-		}
-	],
-	classname:{type:String},
+		},
+	stuname:{type:String},
 	time1:{type:String},
+	time2:{type:String},
+	phone:{type:String},
 	parent:{
 		type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称
 		ref:'Category'						//关联的是本身,关联谁

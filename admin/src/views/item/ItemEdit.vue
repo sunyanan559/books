@@ -8,7 +8,7 @@
 		    <el-input v-model="model.name"></el-input>
 		</el-form-item>
 		<el-form-item label="班级">
-		  	<el-select v-model="model.categories" multiple>
+		  	<el-select v-model="model.categories">
 		  	  <el-option 
 		  				v-for="item in categories"
 		  				:key="item._id"
@@ -18,13 +18,17 @@
 		    </el-form-item>
 		<el-form-item label="学生姓名">
 			  <!-- v-model动态绑定 -->
-		    <el-input v-model="model.classname"></el-input>
+		    <el-input v-model="model.stuname"></el-input>
 		</el-form-item>
-			  <el-form-item label="借阅时间">
+		<el-form-item label="联系电话">
+			  <!-- v-model动态绑定 -->
+		    <el-input v-model="model.phone"></el-input>
+		</el-form-item>
+			  <el-form-item label="借阅日期">
 			  			  <!-- v-model动态绑定 -->
 			    <el-input v-model="model.time1"></el-input>
 			  </el-form-item>
-			<el-form-item label="归还时间">
+			<el-form-item label="归还日期">
 			  			  <!-- v-model动态绑定 -->
 			    <el-input v-model="model.time2"></el-input>
 			  </el-form-item>
@@ -133,27 +137,5 @@
 </script>
 
 <style>
-	.avatar-uploader .el-upload {
-	    border: 1px dashed #d9d9d9;
-	    border-radius: 6px;
-	    cursor: pointer;
-	    position: relative;
-	    overflow: hidden;
-	  }
-	  .avatar-uploader .el-upload:hover {
-	    border-color: #409EFF;
-	  }
-	  .avatar-uploader-icon {
-	    font-size: 28px;
-	    color: #8c939d;
-	    width: 178px;
-	    height: 178px;
-	    line-height: 178px;
-	    text-align: center;
-	  }
-	  .avatar {
-	    width: 178px;
-	    height: 178px;
-	    display: block;
-	  }
+
 </style>

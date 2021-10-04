@@ -1,6 +1,9 @@
 <template>
   <div class="login-container">
-	  <el-card header="登录" class="login-card">
+	  <div>
+		  <img src="../image/图书义卖.png" height="200px">
+	  </div>
+	  <el-card header="图书管理系统" class="login-card">
 		  <!-- native. 监听表达原生的事件。prevent表示阻止跳转页面 -->
 		  <el-form v-model="model" @submit.native.prevent="login">
 			  <el-form-item label="用户名">

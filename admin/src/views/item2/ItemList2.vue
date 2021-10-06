@@ -1,7 +1,14 @@
 <template>
   <div class="home">
     <h1>图书归还列表</h1>
-	<el-table :data="items">
+	<el-table :data="items.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))" >
+			 <el-table-column>
+				  
+			      <template slot="header" slot-scope="scope">
+			        <el-input
+			          v-model="search"
+			          placeholder="输入图书名称搜索"/>
+			      </template>
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column
 	        prop="_id"
@@ -11,18 +18,25 @@
 		  <el-table-column
 	        prop="name"
 	        label="图书名称"
-	        width="220">
-	      </el-table-column>
-		  <el-table-column
-	        prop="time1"
-	        label="借阅时间"
 	        width="200">
 	      </el-table-column>
-		  <el-table-column label="归还状态">
-		  	<el-button type="info" size="mini">未归还</el-button>
-            <el-button type="success" size="mini">已归还</el-button>
+		  <el-table-column
+		    prop="stuname"
+		    label="姓名"
+		    width="220">
+		  </el-table-column>
+		 <el-table-column
+	        prop="time3"
+	        label="实际归还日期"
+	        width="200">
+	      </el-table-column>
+		  <el-table-column prop="time3" label="归还状态">
+		  <template slot-scope="scope">
+		  	<el-button type="info" size="mini" v-if="scope.row.time3 == null">未归还</el-button>
+           <el-button type="success" size="mini" v-else>已归还</el-button>
+		   </template>
 		  	</el-table-column>
-		  
+		    </el-table-column>
 	    </el-table>
   </div>
 </template>
@@ -33,7 +47,8 @@ export default {
   name: 'brandsList',
   data(){
 	  return{
-		  items:[]
+		  items:[],
+		  search:''
 	  }
   },
   methods:{
@@ -67,6 +82,7 @@ export default {
 		              message: '已取消删除'
 		            });          
 		          });
+			
 	  }
   },
   //页面刚刚初进入的时候需要做什么

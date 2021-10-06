@@ -1,21 +1,25 @@
 <template>
   <div class="home">
     <h1>图书借阅列表</h1>
-	<!-- <el-input v-model="search" placeholder="请输入姓名"  width="180"></el-input>
-	<el-button type="info" @click="btn">信息按钮</el-button> -->
-	<el-table :data="items">
-		<!-- prop是绑定的数据字段，label是显示的名称 -->
+	<el-table :data="items.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))" >
+			 <el-table-column
+			      align="right">
+				  
+			      <template slot="header" slot-scope="scope">
+			        <el-input
+			          v-model="search"
+			          placeholder="输入图书名称搜索"/>
+			      </template>
 	      <el-table-column
 	        prop="_id"
 	        label="ID"
-	        width="180">
+	        width="150">
 	      </el-table-column>
 		  <el-table-column
 	        prop="name"
 	        label="图书名称"
-	        width="180">
+	        width="120">
 	      </el-table-column>
-		  </el-table-column>
 		  <el-table-column
 		    prop="stuname"
 		    label="学生姓名"
@@ -29,13 +33,18 @@
 		  <el-table-column
 	        prop="time1"
 	        label="借阅日期"
-	        width="150">
+	        width="120">
 	      </el-table-column>
 		  <el-table-column
 	        prop="time2"
-	        label="归还日期"
-	        width="150">
+	        label="预计归还日期"
+	        width="120">
 	      </el-table-column>
+		  <el-table-column
+		    prop="time3"
+		    label="实际归还日期"
+		    width="120">
+		  </el-table-column>
 		  <!-- 操作 -->
 		  <el-table-column label="操作">
 		  	<template slot-scope="scope">
@@ -47,7 +56,7 @@
 		  		@click="remove(scope.row)">删除</el-button>
 		  	</template>
 		  	</el-table-column>
-		  
+		      </el-table-column>
 	    </el-table>
   </div>
 </template>
@@ -59,8 +68,7 @@ export default {
   data(){
 	  return{
 		  items:[],
-		  // search:'',
-		  // searchData:'',
+		  search:'',
 	  }
   },
   methods:{
@@ -103,10 +111,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.el-input{
-	width:50%;
-	margin-right: 20px;
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>商品列表</h1>
+    <h1>图书信息列表</h1>
 	<el-table :data="items">
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column

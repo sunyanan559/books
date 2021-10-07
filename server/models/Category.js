@@ -1,8 +1,11 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
+	class1:{type:String},
+	stunum:{type:String},
 	name:{type:String},
 	phone:{type:String},
+	address:{type:String},
 	parent:{
 		type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称
 		ref:'Category'						//关联的是本身,关联谁

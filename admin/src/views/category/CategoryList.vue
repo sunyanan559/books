@@ -1,32 +1,37 @@
 <template>
   <div class="home">
-    <h1>分类列表</h1>
+    <h1>学生列表</h1>
 	<el-table :data="items">
 		<!-- prop是绑定的数据字段，label是显示的名称 -->
 	      <el-table-column
 	        prop="_id"
 	        label="ID"
-	        width="240">
+	        width="180">
 	      </el-table-column>
 		  <el-table-column
-		    prop="parent.name"
-		    label="班级">
+		    prop="class1"
+		    label="班级"
+			width="120">
 		  </el-table-column>
-		  
+		  <el-table-column
+		    prop="stunum"
+		    label="学号"
+			width="120">
+		  </el-table-column>
 	      <el-table-column
 	        prop="name"
 	        label="学生姓名"
-	        width="240">
+	        width="120">
 	      </el-table-column>		  
 		   <el-table-column
 	        prop="phone"
 	        label="联系电话"
-	        width="240">
+	        width="120">
 	      </el-table-column>
 		  <el-table-column
-	        prop="addresss"
+	        prop="address"
 	        label="家庭住址"
-	        width="240">
+	        width="120">
 	      </el-table-column>
 		  <!-- 操作 -->
 		  <el-table-column label="操作">

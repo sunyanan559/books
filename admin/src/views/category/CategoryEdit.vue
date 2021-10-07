@@ -6,14 +6,11 @@
 				label-width="120px" 
 				@submit.native.prevent="save">
 		<el-form-item label="班级">
-			<el-select v-model="model.parent">
-			  <el-option 
-						v-for="item in parents"
-						:key="item._id"
-						:label="item.name" 
-						:value="item._id"></el-option>
-			</el-select>
+			<el-input v-model="model.class1"></el-input>
 		  </el-form-item>
+		  <el-form-item label="学号">
+		  	<el-input v-model="model.stunum"></el-input>
+		    </el-form-item>
 	  <el-form-item label="学生姓名">
 	    <el-input v-model="model.name"></el-input>
 	  </el-form-item> 

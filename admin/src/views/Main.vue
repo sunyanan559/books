@@ -1,5 +1,10 @@
 <template>
   <div class="main">
+	  <el-container>
+	    <el-header style="text-align: center; font-size: 18px">
+	      <span>图书管理系统</span>
+	    </el-header>
+	  </el-container>
     <el-container style="height: 100vh;">
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
         <!-- 
@@ -23,13 +28,13 @@
 			
 			 <el-menu-item-group>
 			<template slot="title">图书管理</template>
-			  <el-menu-item index="/brands/create">录入图书详细</el-menu-item>
+			  <el-menu-item index="/brands/create">录入图书详情</el-menu-item>
 			  <el-menu-item index="/brands/list">图书信息列表</el-menu-item>
 			</el-menu-item-group>
 
           </el-submenu>
 			<el-submenu index="2">
-		    	<template slot="title"><i class="el-icon-goods"></i>图书管理</template>
+		    	<template slot="title"><i class="el-icon-reading"></i>图书管理</template>
 		    	<el-menu-item-group>
 				<template slot="title">借阅管理</template>
 			  	<el-menu-item index="/items/create">新建借阅图书</el-menu-item>
@@ -52,25 +57,17 @@
         </el-menu>
       </el-aside>
       
-      <el-container>
+     <!-- <el-container>
         <el-header style="text-align: right; font-size: 12px">
-          <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-          <span>王小虎</span>
+          <span>图书管理系统</span>
         </el-header>
-        
+        -->
         <el-main>
 		<!-- 动态显示区域 -->
          <router-view></router-view>
 		 
         </el-main>
-      </el-container>
+      <!-- /el-container> -->
     </el-container>
   </div>
 </template>

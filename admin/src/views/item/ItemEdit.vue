@@ -7,15 +7,9 @@
 			  <!-- v-model动态绑定 -->
 		    <el-input v-model="model.name"></el-input>
 		</el-form-item>
-		<el-form-item label="班级">
-		  	<el-select v-model="model.categories">
-		  	  <el-option 
-		  				v-for="item in categories"
-		  				:key="item._id"
-		  				:label="item.name" 
-		  				:value="item._id"></el-option>
-		  	</el-select>
-		    </el-form-item>
+		<el-form-item label="学号">
+		    <el-input v-model="model.stunum"></el-input>
+		</el-form-item>
 		<el-form-item label="学生姓名">
 		    <el-input v-model="model.stuname"></el-input>
 		</el-form-item>

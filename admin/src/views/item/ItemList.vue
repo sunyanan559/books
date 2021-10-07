@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <h1>图书借阅列表</h1>
-	<el-table :data="items.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))" >
+	<el-table :data="items.filter(data => !search || data.stuname.toLowerCase().includes(search.toLowerCase()))" >
 			 <el-table-column
 			      align="right">
 				  
 			      <template slot="header" slot-scope="scope">
 			        <el-input
 			          v-model="search"
-			          placeholder="输入图书名称搜索"/>
+			          placeholder="输入学生姓名搜索"/>
 			      </template>
 	      <el-table-column
 	        prop="_id"

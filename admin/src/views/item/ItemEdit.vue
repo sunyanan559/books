@@ -17,21 +17,20 @@
 		  	</el-select>
 		    </el-form-item>
 		<el-form-item label="学生姓名">
-			  <!-- v-model动态绑定 -->
 		    <el-input v-model="model.stuname"></el-input>
 		</el-form-item>
 		<el-form-item label="联系电话">
-			  <!-- v-model动态绑定 -->
 		    <el-input v-model="model.phone"></el-input>
 		</el-form-item>
 			  <el-form-item label="借阅日期">
-			  			  <!-- v-model动态绑定 -->
 			    <el-input v-model="model.time1"></el-input>
 			  </el-form-item>
-			<el-form-item label="归还日期">
-			  			  <!-- v-model动态绑定 -->
+			<el-form-item label="预计归还日期">
 			    <el-input v-model="model.time2"></el-input>
 			  </el-form-item>
+			  <el-form-item label="实际归还日期">
+			      <el-input v-model="model.time3"></el-input>
+			    </el-form-item>
 		  <el-form-item>
 			  <!-- native-type="submit" 采取原生态提交 -->
 		      <el-button type="primary" native-type="submit">保存</el-button>

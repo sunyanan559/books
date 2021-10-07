@@ -11,6 +11,7 @@ const schema = new mongoose.Schema({
 	stuname:{type:String},
 	time1:{type:String},
 	time2:{type:String},
+	time3:{type:String},
 	phone:{type:String},
 	parent:{
 		type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称

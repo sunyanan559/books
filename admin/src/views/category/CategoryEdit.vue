@@ -17,10 +17,6 @@
 	  <el-form-item label="学生姓名">
 	    <el-input v-model="model.name"></el-input>
 	  </el-form-item> 
-  <el-form-item label="学生性别">
-	  	<el-checkbox v-model="checkbox" label="男">男</el-checkbox>
-       <el-checkbox v-model="checkbox" label="">女</el-checkbox>
-	   </el-form-item> 
 	  <el-form-item label="联系电话">
 	    <el-input v-model="model.phone"></el-input>
 	  </el-form-item>
@@ -42,11 +38,6 @@ export default {
   props:{
 	  id:{}
   },
-  data () {
-      return {
-        checkbox: '男'
-      };
-    },
   data() {
       return {
         model:{},

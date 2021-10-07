@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
 	name:{type:String},
+	phone:{type:String},
 	parent:{
 		type:mongoose.Schema.Types.ObjectId,//ObjectId mongoose的id名称
 		ref:'Category'						//关联的是本身,关联谁

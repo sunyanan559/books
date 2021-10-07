@@ -14,8 +14,18 @@
 						:value="item._id"></el-option>
 			</el-select>
 		  </el-form-item>
-	  <el-form-item label="姓名">
+	  <el-form-item label="学生姓名">
 	    <el-input v-model="model.name"></el-input>
+	  </el-form-item> 
+  <el-form-item label="学生性别">
+	  	<el-checkbox v-model="checkbox" label="男">男</el-checkbox>
+       <el-checkbox v-model="checkbox" label="">女</el-checkbox>
+	   </el-form-item> 
+	  <el-form-item label="联系电话">
+	    <el-input v-model="model.phone"></el-input>
+	  </el-form-item>
+	  <el-form-item label="家庭住址">
+	    <el-input v-model="model.address"></el-input>
 	  </el-form-item>
 	  <el-form-item>
 		  <!-- native-type="submit" 采用原生提交方式 -->
@@ -32,6 +42,11 @@ export default {
   props:{
 	  id:{}
   },
+  data () {
+      return {
+        checkbox: '男'
+      };
+    },
   data() {
       return {
         model:{},

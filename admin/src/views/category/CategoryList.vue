@@ -16,7 +16,25 @@
 		  
 	      <el-table-column
 	        prop="name"
-	        label="姓名"
+	        label="学生姓名"
+	        width="240">
+	      </el-table-column>		  
+          <el-checxbox
+		 v-model="checkbox" 
+		  label="男">男
+		  </el-checxbox>
+        <el-checkbox 
+		  v-model="checkbox" 
+		  label="女">女
+		  </el-checkbox>
+		   <el-table-column
+	        prop="phone"
+	        label="联系电话"
+	        width="240">
+	      </el-table-column>
+		  <el-table-column
+	        prop="addresss"
+	        label="家庭住址"
 	        width="240">
 	      </el-table-column>
 		  <!-- 操作 -->
@@ -36,9 +54,13 @@
 </template>
 
 <script>
-
 export default {
   name: 'CategoryList',
+  data () {
+      return {
+        checkbox: '男'
+      };
+    },
   data(){
 	  return{
 		  items:[]
